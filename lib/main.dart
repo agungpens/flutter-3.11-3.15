@@ -22,7 +22,7 @@ class _MyWidgetState extends State<MyWidget> {
               title: Text("First Screen"),
             ),
             body: TextField(
-              onChanged: (String value) {
+              onSubmitted: (String value) {
                 setState(() {
                   _name = value;
                 });
