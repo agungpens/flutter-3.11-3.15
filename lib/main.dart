@@ -12,23 +12,21 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
+  String _name = '';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            title: Text("First Screen"),
-          ),
-          body: DropdownButton<String>(
-            items: <String>['One', 'Two', 'Free', 'Four'].map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (_) {},
-          ),
-        ));
+            appBar: AppBar(
+              title: Text("First Screen"),
+            ),
+            body: TextField(
+              onChanged: (String value) {
+                setState(() {
+                  _name = value;
+                });
+              },
+            )));
   }
 }
