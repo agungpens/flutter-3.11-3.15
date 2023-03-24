@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyWidget());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
 
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,12 +20,14 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("First Screen"),
           ),
-          body: IconButton(
-            icon: Icon(Icons.volume_up),
-            tooltip: 'Increase Volume by 10',
-            onPressed: () {
-              // aksi ketika button diklik
-            },
+          body: DropdownButton<String>(
+            items: <String>['One', 'Two', 'Free', 'Four'].map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (_) {},
           ),
         ));
   }
