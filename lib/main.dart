@@ -15,11 +15,11 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("First Screen"),
           ),
-          body: TextButton(
+          body: OutlinedButton(
             onPressed: () {
               // aksi ketika button diklik
             },
-            child: Text("Text Button"),
+            child: Text("Text OutlineButton"),
           ),
         ));
   }
