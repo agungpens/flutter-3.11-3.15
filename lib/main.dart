@@ -15,11 +15,12 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Text("First Screen"),
           ),
-          body: OutlinedButton(
+          body: IconButton(
+            icon: Icon(Icons.volume_up),
+            tooltip: 'Increase Volume by 10',
             onPressed: () {
               // aksi ketika button diklik
             },
-            child: Text("Text OutlineButton"),
           ),
         ));
   }
